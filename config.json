@@ -1,21 +1,17 @@
 {
-  "log": {
-    "access": "log_acc.log",
-    "error": "log_err.log",
-    "loglevel": "warning"
-  },
   "inbound": {
-    "port": 1080,
-    "listen": "0.0.0.0",
-    "protocol": "http",
-    "settings": {
-      "auth": "noauth",
-      "udp": true
+      "settings" : {
+        "allowTransparent" : true
+      },
+      "port" : 1087,
+      "protocol" : "http",
+      "listen" : "127.0.0.1",
+      "streamSettings" : {
+
+      }
     },
-    "streamSettings": null
-  },
   "outbound": {
-    "tag": "agentout",
+    "tag": "proxy",
     "protocol": "vmess",
     "settings": {
       "vnext": [
@@ -24,7 +20,7 @@
           "port": 443,
           "users": [
             {
-              "id": "61de2115-aa37-4778-8926-a3a3378900d7",
+              "id": "7265ae8c-c686-4a7e-a824-07cac40a5799",
               "alterId": 64,
               "security": "chacha20-poly1305"
             }
@@ -37,7 +33,7 @@
       "network": "ws",
       "security": "tls",
       "tlsSettings": { "serverName": "www.xuyulan.com" },
-      "wsSettings": { "path": "/websocket" }
+      "wsSettings": { "path": "/client" }
 
     },
     "mux": {
